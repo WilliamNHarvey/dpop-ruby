@@ -1,0 +1,36 @@
+PATH
+  remote: .
+  specs:
+    dpop (0.0.2)
+      activesupport
+      jwt
+      openssl
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (7.0.3.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+    concurrent-ruby (1.1.10)
+    i18n (1.12.0)
+      concurrent-ruby (~> 1.0)
+    jwt (2.4.1)
+    minitest (5.16.2)
+    openssl (3.0.0)
+    rake (13.0.6)
+    tzinfo (2.0.5)
+      concurrent-ruby (~> 1.0)
+
+PLATFORMS
+  x86_64-darwin-19
+
+DEPENDENCIES
+  bundler
+  dpop!
+  rake (~> 13.0)
+
+BUNDLED WITH
+   2.3.15
