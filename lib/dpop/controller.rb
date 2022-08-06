@@ -14,7 +14,7 @@ module Dpop
       def ensure_dpop!
         return if cookie_jar[Dpop.config.cookie_name]
 
-        cookie_jar[Dpop.config.cookie_name]=Dpop::KeyGenerator.generate
+        cookie_jar[Dpop.config.cookie_name] = Dpop::KeyGenerator.generate(Dpop.config.key_alg)
       end
 
       def get_proof(**args)
