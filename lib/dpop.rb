@@ -42,5 +42,11 @@ module Dpop
     def generate_key_pair(alg = :rsa)
       Dpop::KeyGenerator.generate(alg)
     end
+
+    def load_integration
+      require "dpop/railtie" if defined?(Rails::Railtie)
+    end
   end
 end
+
+Dpop.load_integration
