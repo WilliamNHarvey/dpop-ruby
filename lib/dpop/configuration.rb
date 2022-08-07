@@ -5,7 +5,6 @@ module Dpop
     attr_accessor :cookie_name
     attr_accessor :encryption_key
     attr_accessor :generated_key_size
-    attr_accessor :logger
     attr_accessor :key_alg
 
     DEFAULT_COOKIE_NAME = "_proof_keys"
@@ -15,7 +14,6 @@ module Dpop
 
     def initialize
       self.cookie_name = DEFAULT_COOKIE_NAME
-      self.logger = Logger.new($stdout)
       self.encryption_key = DEFAULT_ENCRYPTION_KEY
       self.generated_key_size = DEFAULT_GENERATED_KEY_SIZE
       self.key_alg = DEFAULT_KEY_ALG

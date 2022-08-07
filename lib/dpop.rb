@@ -41,7 +41,7 @@ module Dpop
       generator.create_dpop_proof(args)
     end
 
-    def generateKeyPairForAlg(alg = :rsa)
+    def generate_key_pair(alg = :rsa)
       Dpop::KeyGenerator.generate(alg)
     end
   end
