@@ -19,7 +19,7 @@ module Dpop
 
       def get_proof(**args)
         dpop_key = cookie_jar[Dpop.config.cookie_name]
-        raise MissingDpopCookie.new(Dpop.config.cookie_name) unless dpop
+        raise MissingDpopCookie, Dpop.config.cookie_name unless dpop
 
         generator = Dpop::ProofGenerator.new(dpop_key, "RS256")
         generator.create_dpop_proof(args)

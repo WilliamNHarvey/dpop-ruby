@@ -2,7 +2,6 @@
 
 module Dpop
   class ProofGenerator
-
     JWT_TYPE = "dpop+jwt"
     RSA = "RSA"
 
@@ -19,7 +18,8 @@ module Dpop
     end
 
     def initialize(dpop_key, alg)
-      raise MissingKeyError.new if dpop_key.blank?
+      raise MissingKeyError if dpop_key.blank?
+
       @dpop_key = dpop_key
       @alg = alg
     end
@@ -31,7 +31,7 @@ module Dpop
       headers = {
         alg: @alg,
         typ: JWT_TYPE,
-        jwk: public_key,
+        jwk: public_key
       }
 
       payload = {
@@ -40,7 +40,7 @@ module Dpop
         ath: ath,
         iat: iat,
         jti: jti,
-        nonce: nonce,
+        nonce: nonce
       }.merge(additional).compact
 
       JWT.encode(payload, private_key, @alg, headers)
@@ -61,7 +61,7 @@ module Dpop
         }
         [@private_key, @public_key]
       else
-        raise InvalidKeyError.new(@dpop_key)
+        raise InvalidKeyError, @dpop_key
       end
     end
   end

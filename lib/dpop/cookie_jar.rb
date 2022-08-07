@@ -23,7 +23,7 @@ module Dpop
     end
 
     def has_key?(cookie_name)
-      @request_cookies.has_key?(cookie_name)
+      @request_cookies.key?(cookie_name)
     end
 
     private

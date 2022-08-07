@@ -2,10 +2,7 @@
 
 module Dpop
   class Configuration
-    attr_accessor :cookie_name
-    attr_accessor :encryption_key
-    attr_accessor :generated_key_size
-    attr_accessor :key_alg
+    attr_accessor :cookie_name, :encryption_key, :generated_key_size, :key_alg
 
     DEFAULT_COOKIE_NAME = "_proof_keys"
     DEFAULT_ENCRYPTION_KEY = ENV["DPOP_ENCRYPTION_KEY"] || ""
@@ -22,7 +19,5 @@ module Dpop
     def encryptor
       @encryptor ||= Dpop::Encryptor.new(encryption_key)
     end
-
-    private
   end
 end

@@ -28,6 +28,11 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler"
+  spec.add_development_dependency "jwt"
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rubocop"
+  spec.add_development_dependency "rubocop-rails"
+
   spec.add_dependency "activesupport"
   spec.add_dependency "jwt"
   spec.add_dependency "openssl"

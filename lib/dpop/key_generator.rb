@@ -9,8 +9,8 @@ module Dpop
     end
 
     def generate(alg = :rsa)
-      # TODO support more algs
-      raise UnsupportedAlgorithmError.new(alg) if alg != :rsa
+      # TODO: support more algs
+      raise UnsupportedAlgorithmError, alg if alg != :rsa
 
       OpenSSL::PKey::RSA.generate(Dpop.config.generated_key_size).to_pem
     end

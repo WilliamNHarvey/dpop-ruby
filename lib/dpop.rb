@@ -17,7 +17,6 @@ module Dpop
   autoload :KeyGenerator,   "dpop/key_generator"
   autoload :ProofGenerator, "dpop/proof_generator"
   autoload :Version,        "dpop/version"
-  
 
   class << self
     attr_accessor :configuration
