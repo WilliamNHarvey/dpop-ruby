@@ -7,6 +7,7 @@ require "jwt"
 require "openssl"
 require "securerandom"
 
+# DPoP top level methods
 module Dpop
   class Error < StandardError; end
 
@@ -19,8 +20,6 @@ module Dpop
   autoload :Version,        "dpop/version"
 
   class << self
-    attr_accessor :configuration
-
     # Configure Dpop application-wide settings.
     #
     # Yields a configuration object that can be used to override default settings.

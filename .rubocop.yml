@@ -7,6 +7,9 @@ Style/StringLiterals:
 Metrics/BlockLength:
   Enabled: false
 
+Metrics/ParameterLists:
+  Enabled: false
+
 Naming/FileName:
   Enabled: false
 

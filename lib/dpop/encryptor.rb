@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Dpop
+  # Encrypts and decrypts messages
   class Encryptor
     extend Forwardable
 
@@ -17,8 +18,13 @@ module Dpop
     private
 
     def build_message_encryptor(secret)
-      key_generator = ActiveSupport::CachingKeyGenerator.new(ActiveSupport::KeyGenerator.new(secret, iterations: 1000,
-                                                                                                     hash_digest_class: OpenSSL::Digest::SHA256))
+      key_generator = ActiveSupport::CachingKeyGenerator.new(
+        ActiveSupport::KeyGenerator.new(
+          secret,
+          iterations: 1000,
+          hash_digest_class: OpenSSL::Digest::SHA256
+        )
+      )
       secret        = key_generator.generate_key(SECRET)[0, 32]
       sign_secret   = key_generator.generate_key(SIGN_SECRET)
       ActiveSupport::MessageEncryptor.new(secret, sign_secret, serializer: JSON, cipher: CIPHER)

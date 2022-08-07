@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Dpop
+  # Configures the app's module methods
   class Configuration
     attr_accessor :cookie_name, :encryption_key, :generated_key_size, :key_alg
 

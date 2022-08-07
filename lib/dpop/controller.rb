@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 module Dpop
+  # Controller concern for Rails
   module Controller
     extend ActiveSupport::Concern
 
+    # Error for DPoP cookie not being found
     class MissingDpopCookie < StandardError
       def initialize(cookie_name)
         super("No DPoP cookie found with name `#{cookie_name}`. Try running `ensure_dpop!` before using this concern.")

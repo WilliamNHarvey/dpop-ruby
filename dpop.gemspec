@@ -8,9 +8,10 @@ Gem::Specification.new do |spec|
   spec.authors = ["WilliamNHarvey"]
   spec.email = ["williamnharvey@gmail.com"]
 
-  spec.summary = "Implementation of DPoP (Demonstrating Proof-of-Possession at the Application Layer) for Ruby and Rails apps"
+  spec.summary = "Implementation of DPoP (Demonstrating Proof-of-Possession at the Application Layer)
+                  for Ruby and Rails"
   spec.homepage = "https://github.com/WilliamNHarvey/dpop-ruby"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.required_ruby_version = ">= 2.5.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/WilliamNHarvey/dpop-ruby"

@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 module Dpop
+  # Manages browser cookies
   class CookieJar
+    # Error for when cookie is not decipherable
     class InvalidCookieError < StandardError
       def initialize(cookie_name, cookie_value)
         super("invalid value for #{cookie_name}: #{cookie_value}")
@@ -22,7 +24,7 @@ module Dpop
       @request_cookies[cookie_name] = encrypted_value
     end
 
-    def has_key?(cookie_name)
+    def key?(cookie_name)
       @request_cookies.key?(cookie_name)
     end
 

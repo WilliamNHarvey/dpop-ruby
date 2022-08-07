@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 module Dpop
+  # Generates private keys
   module KeyGenerator
+    # Error for receiving an unrecognized algorithm
     class UnsupportedAlgorithmError < StandardError
       def initialize(alg)
         super("Unsupported algorithm received: #{alg}")
