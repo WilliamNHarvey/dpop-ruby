@@ -1,9 +1,9 @@
-name: Tests
+name: Main
 
 on: [push]
 
 jobs:
-  test:
+  rspec:
     runs-on: ubuntu-latest
 
     steps:

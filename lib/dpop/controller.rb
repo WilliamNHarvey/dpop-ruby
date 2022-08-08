@@ -17,7 +17,7 @@ module Dpop
       self.ensure_dpop_on_actions = false
 
       # Set up the around_action which ensures the cookie is set on request if the controller has ensure_dpop! set
-      before_action :set_dpop_cookie      
+      before_action :set_dpop_cookie
     end
 
     class_methods do
@@ -34,8 +34,8 @@ module Dpop
       generator.create_dpop_proof(args)
     end
 
-    def set_dpop_cookie(&block)
-      return unless self.ensure_dpop_on_actions
+    def set_dpop_cookie
+      return unless ensure_dpop_on_actions
       return if cookie_jar[Dpop.config.cookie_name]
 
       generated = Dpop::KeyGenerator.generate(Dpop.config.key_alg)
