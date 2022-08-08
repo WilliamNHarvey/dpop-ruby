@@ -1,4 +1,4 @@
-## v0.0.2
+## v0.1.0
  - Initial setup:
    - Configuration
    - Controller

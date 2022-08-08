@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dpop (0.0.2)
+    dpop (0.1.0)
       activesupport
       jwt
       openssl
