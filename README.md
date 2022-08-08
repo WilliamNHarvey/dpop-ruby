@@ -2,8 +2,6 @@
 
 Implementation of DPoP ([Demonstrating Proof-of-Possession at the Application Layer](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-dpop)) for Ruby and Rails apps.
 
-Adds a 
-
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
@@ -35,7 +33,7 @@ end
 ```
 
 |Configurable variable|Description|Default value|
-|===|===|===|
+|---|---|---|
 |cookie_name|Cookie saved on the browser when using the Rails controller concern|"_proof_keys"|
 |encryption_key|Secure passphrase used for encrypting cookes with Rails|ENV["DPOP_ENCRYPTION_KEY"]|
 |generated_key_size|Byte size of generated private keys|1024|
