@@ -15,6 +15,10 @@ module Dpop
       @request_cookies = request_cookies
     end
 
+    def raw(cookie_name)
+      @request_cookies[cookie_name]
+    end
+
     def [](cookie_name)
       try_decrypt(cookie_name)
     end
