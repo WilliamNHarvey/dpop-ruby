@@ -8,9 +8,10 @@ Gem::Specification.new do |spec|
   spec.authors = ["WilliamNHarvey"]
   spec.email = ["williamnharvey@gmail.com"]
 
-  spec.summary = "Implementation of DPoP (Demonstrative Proof of Possession on the Application Layer) for Ruby and Rails apps"
+  spec.summary = "Implementation of DPoP (Demonstrating Proof-of-Possession at the Application Layer)
+                  for Ruby and Rails"
   spec.homepage = "https://github.com/WilliamNHarvey/dpop-ruby"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.required_ruby_version = ">= 2.5.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/WilliamNHarvey/dpop-ruby"
@@ -27,9 +28,13 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  # Uncomment to register a new dependency of your gem
-  # spec.add_dependency "example-gem", "~> 1.0"
+  spec.add_development_dependency "bundler"
+  spec.add_development_dependency "jwt"
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rubocop"
+  spec.add_development_dependency "rubocop-rails"
 
-  # For more information and examples about making a new gem, check out our
-  # guide at: https://bundler.io/guides/creating_gem.html
+  spec.add_dependency "activesupport"
+  spec.add_dependency "jwt"
+  spec.add_dependency "openssl"
 end
