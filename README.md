@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/dpop.svg)](https://badge.fury.io/rb/dpop)
+
 # Dpop
 
 Implementation of DPoP ([Demonstrating Proof-of-Possession at the Application Layer](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-dpop)) for Ruby and Rails apps.
