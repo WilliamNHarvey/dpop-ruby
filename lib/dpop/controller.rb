@@ -36,14 +36,17 @@ module Dpop
 
     def set_dpop_cookie
       return unless ensure_dpop_on_actions
-      return if cookie_jar[Dpop.config.cookie_name]
+      return if cookie_jar.key?(Dpop.config.cookie_name)
 
-      generated = Dpop::KeyGenerator.generate(Dpop.config.key_alg)
-
-      cookie_jar[Dpop.config.cookie_name] = generated
+      generate_and_set
     end
 
     private
+
+    def generate_and_set
+      cookie_jar[Dpop.config.cookie_name] = Dpop::KeyGenerator.generate(Dpop.config.key_alg)
+      cookies[Dpop.config.cookie_name] = { value: cookie_jar.raw(Dpop.config.cookie_name), httponly: true }
+    end
 
     def cookie_jar
       Dpop::CookieJar.new(Dpop.config.encryptor, request.cookies)
