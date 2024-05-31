@@ -36,7 +36,7 @@ module Dpop
 
     def get_proof_with_key(dpop_key, **args)
       generator = Dpop::ProofGenerator.new(dpop_key, "RS256")
-      generator.create_dpop_proof(args)
+      generator.create_dpop_proof(**args)
     end
 
     def generate_key_pair(alg = :rsa)
