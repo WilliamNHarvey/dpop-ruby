@@ -1,3 +1,6 @@
+## v0.1.3
+ - Update #get_proof_with_key to support ruby 3.x
+
 ## v0.1.2
  - Set cookie as httponly
 
